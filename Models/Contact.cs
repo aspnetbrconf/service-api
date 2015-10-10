@@ -7,8 +7,7 @@ namespace AspnetBr.Api.Models
 {
     public class Contact
     {
-        public Contact()
-        {
-        }
+        public string Type { get; set; }
+        public string Text { get; set; }
     }
 }

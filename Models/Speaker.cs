@@ -8,8 +8,8 @@ namespace AspnetBr.Api.Models
     public class Speaker
     {
         public string Fullname { get; set; }
-        public string Bio { get; set; }
         public string Title { get; set; }
-        public string PhotoUrl { get; set; }    
+        public string Bio { get; set; }
+        public string PhotoUrl { get; set; }
     }
 }

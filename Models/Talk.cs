@@ -9,5 +9,6 @@ namespace AspnetBr.Api.Models
     {
         public string Title { get; set; }
         public string Description { get; set; }
+        public List<Speaker> Speakers { get; set; }
     }
 }

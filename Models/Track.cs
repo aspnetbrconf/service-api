@@ -10,6 +10,7 @@ namespace AspnetBr.Api.Models
         public string Title { get; set; }
         public string Description { get; set; }
         public string Room { get; set; }
-        public List<Talk> Talks { get; set; }
+        public DateTime Day { get; set; }
+        public Schedule Schedule { get; set; }
     }
 }

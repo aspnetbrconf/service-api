@@ -7,8 +7,7 @@ namespace AspnetBr.Api.Models
 {
     public class Sponsor
     {
-        public Sponsor()
-        {
-        }
+        public string Name { get; set; }
+        public string Level { get; set; }
     }
 }
