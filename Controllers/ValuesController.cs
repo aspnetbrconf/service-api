@@ -2,18 +2,26 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using AspnetBr.Api.Models;
 using Microsoft.AspNet.Mvc;
 
 namespace aspnetbr_api.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/v1/[controller]")]
     public class ValuesController : Controller
     {
         // GET: api/values
         [HttpGet]
-        public IEnumerable<string> Get()
+        public IEnumerable<Event> Get()
         {
-            return new string[] { "value1", "value2" };
+            using(var db = new AspnetBrContext()){
+
+                return db.Events.ToList();
+
+            }
+
+
+            //return new string[] { "value1", "value2" };
         }
 
         // GET api/values/5

@@ -7,6 +7,7 @@ namespace AspnetBr.Api.Models
 {
     public class Event
     {
+        public int Id { get; set; }
         public string Title { get; set; }
         public string Edition { get; set; }
         public List<Track> Tracks { get; set; }

@@ -7,6 +7,7 @@ namespace AspnetBr.Api.Models
 {
     public class Track
     {
+      public int Id { get; set; }
         public string Title { get; set; }
         public string Description { get; set; }
         public string Room { get; set; }
