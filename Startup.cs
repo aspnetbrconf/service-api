@@ -24,7 +24,6 @@ namespace aspnetbr_api
         // Use this method to add services to the container
         public void ConfigureServices(IServiceCollection services)
         {
-
             services.AddEntityFramework()
               .AddSqlite()
               .AddDbContext<AspnetBrContext>(opt => opt.UseSqlite($"Data Source=./aspnetbr.db"));
@@ -34,6 +33,8 @@ namespace aspnetbr_api
                {
                    options.SerializerSettings.ContractResolver = new CamelCasePropertyNamesContractResolver();
                });
+
+            services.AddScoped<DataInit>();
 
             // Uncomment the following line to add Web API services which makes it easier to port Web API 2 controllers.
             // You will also need to add the Microsoft.AspNet.Mvc.WebApiCompatShim package to the 'dependencies' section of project.json.
@@ -51,12 +52,14 @@ namespace aspnetbr_api
             // Add the following route for porting Web API 2 controllers.
             // routes.MapWebApiRoute("DefaultApi", "api/{controller}/{id?}");
 
-            using (var context = new AspnetBrContext())
-            {
-                var data = new DataInit(context);
-                data.AddEvent();
-            }
+            // using (var context = app.ApplicationServices.GetService<AspnetBrContext>())
+            // {
+            //     var data = new DataInit(context);
+            //     data.AddEvent();
+            // }
 
+            var datainit = app.ApplicationServices.GetService<DataInit>();
+            datainit.AddEvent();
         }
     }
 }

@@ -17,12 +17,5 @@ namespace AspnetBr.Api.Models
         public DbSet<Sponsor> Sponsors { get; set; }
         public DbSet<Talk> Talks { get; set; }
         public DbSet<Track> Tracks { get; set; }
-
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        {
-            var appEnv = CallContextServiceLocator.Locator.ServiceProvider
-                            .GetRequiredService<IApplicationEnvironment>();
-            optionsBuilder.UseSqlite($"Data Source={ appEnv.ApplicationBasePath }/aspnetbr.db");
-        }
     }
 }
