@@ -4,8 +4,6 @@ using Microsoft.Dnx.Runtime;
 using Microsoft.Dnx.Runtime.Infrastructure;
 using Microsoft.Framework.DependencyInjection;
 
-
-
 namespace AspnetBr.Api.Models
 {
     public class AspnetBrContext : DbContext
@@ -24,7 +22,6 @@ namespace AspnetBr.Api.Models
         {
             var appEnv = CallContextServiceLocator.Locator.ServiceProvider
                             .GetRequiredService<IApplicationEnvironment>();
-            
             optionsBuilder.UseSqlite($"Data Source={ appEnv.ApplicationBasePath }/aspnetbr.db");
         }
     }

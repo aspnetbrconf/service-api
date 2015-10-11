@@ -5,7 +5,7 @@ using Microsoft.Data.Entity.Metadata;
 using Microsoft.Data.Entity.Migrations;
 using AspnetBr.Api.Models;
 
-namespace serviceapi.Migrations
+namespace AspnetBr.Api.Migrations
 {
     [DbContext(typeof(AspnetBrContext))]
     partial class AspnetBrContextModelSnapshot : ModelSnapshot

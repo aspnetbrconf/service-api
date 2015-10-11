@@ -6,9 +6,9 @@ using Microsoft.AspNet.Mvc;
 
 // For more information on enabling Web API for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
 
-namespace aspnetbr_api.Controllers
+namespace AspnetBr.Api.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/v1/[controller]")]
     public class AgendaController : Controller
     {
         // GET: api/values

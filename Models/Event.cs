@@ -7,6 +7,13 @@ namespace AspnetBr.Api.Models
 {
     public class Event
     {
+        public Event()
+        {
+            this.Tracks = new List<Track>();
+            this.Sponsors = new List<Sponsor>();
+            this.Contacts = new List<Contact>();
+        }
+
         public int Id { get; set; }
         public string Title { get; set; }
         public string Edition { get; set; }

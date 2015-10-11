@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using Microsoft.Data.Entity.Migrations;
 
-namespace serviceapi.Migrations
+namespace AspnetBr.Api.Migrations
 {
     public partial class CreateModelMigration : Migration
     {

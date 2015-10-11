@@ -5,18 +5,18 @@ using System.Threading.Tasks;
 using AspnetBr.Api.Models;
 using Microsoft.AspNet.Mvc;
 
-namespace aspnetbr_api.Controllers
+namespace AspnetBr.Api.Controllers
 {
     [Route("api/v1/[controller]")]
     public class ValuesController : Controller
     {
         // GET: api/values
         [HttpGet]
-        public IEnumerable<Event> Get()
+        public IEnumerable<Sponsor> Get()
         {
             using(var db = new AspnetBrContext()){
 
-                return db.Events.ToList();
+                return db.Sponsors.ToList();
 
             }
 

@@ -8,11 +8,11 @@ using AspnetBr.Api.Models;
 namespace AspnetBr.Api.Migrations
 {
     [DbContext(typeof(AspnetBrContext))]
-    public  partial class CreateModelMigration 
+    partial class jdfahsduf
     {
         public override string Id
         {
-            get { return "20151010214634_CreateModelMigration"; }
+            get { return "20151010232100_jdfahsduf"; }
         }
 
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
