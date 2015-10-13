@@ -22,5 +22,6 @@ namespace AspnetBr.Api.Models
         public Local Local { get; set; }
         public DateTime DueDate { get; set; }
         public List<Contact> Contacts { get; set; }
+        public bool IsPrincipal { get; set; }
     }
 }

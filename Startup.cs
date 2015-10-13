@@ -8,11 +8,12 @@ using Microsoft.AspNet.Http;
 using Microsoft.AspNet.Routing;
 using Microsoft.Framework.DependencyInjection;
 using Microsoft.Data.Entity;
+using Microsoft.AspNet.Cors;
 using AspnetBr.Api.Models;
 using AspnetBr.Api.Migrations;
 using Newtonsoft.Json.Serialization;
 
-namespace aspnetbr_api
+namespace AspnetBr.Api
 {
     public class Startup
     {
@@ -34,6 +35,15 @@ namespace aspnetbr_api
                    options.SerializerSettings.ContractResolver = new CamelCasePropertyNamesContractResolver();
                });
 
+            services.AddCors();
+            services.ConfigureCors(o =>
+              o.AddPolicy("AllowAll", p => p
+                  .AllowAnyOrigin()
+                  .AllowAnyMethod()
+                  .AllowAnyHeader()
+                  .AllowCredentials()
+                  .SetPreflightMaxAge(TimeSpan.FromSeconds(2520))));
+
             services.AddScoped<DataInit>();
 
             // Uncomment the following line to add Web API services which makes it easier to port Web API 2 controllers.
@@ -48,15 +58,10 @@ namespace aspnetbr_api
             app.UseStaticFiles();
 
             // Add MVC to the request pipeline.
+            app.UseCors("AllowAll");
             app.UseMvc();
             // Add the following route for porting Web API 2 controllers.
             // routes.MapWebApiRoute("DefaultApi", "api/{controller}/{id?}");
-
-            // using (var context = app.ApplicationServices.GetService<AspnetBrContext>())
-            // {
-            //     var data = new DataInit(context);
-            //     data.AddEvent();
-            // }
 
             var datainit = app.ApplicationServices.GetService<DataInit>();
             datainit.AddEvent();

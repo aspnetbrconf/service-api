@@ -8,9 +8,14 @@ using AspnetBr.Api.Models;
 namespace AspnetBr.Api.Migrations
 {
     [DbContext(typeof(AspnetBrContext))]
-    partial class AspnetBrContextModelSnapshot : ModelSnapshot
+    partial class iqeurqie343
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        public override string Id
+        {
+            get { return "20151013022030_iqeurqie343"; }
+        }
+
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
             modelBuilder
                 .Annotation("ProductVersion", "7.0.0-beta7-15540");
